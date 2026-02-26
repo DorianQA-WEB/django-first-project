@@ -1,9 +1,10 @@
 from django.http import (HttpResponse, HttpResponseRedirect, HttpResponsePermanentRedirect, HttpResponseBadRequest,
                          HttpResponseForbidden)
+from django.shortcuts import render
 
 
 def index(request):
-    return HttpResponse('Главная страница')
+    return render(request, 'index.html')
 
 def about(request, name, age):
     return HttpResponse(f'''<h2>О сайте</h2>

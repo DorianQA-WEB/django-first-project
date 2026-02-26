@@ -2,7 +2,7 @@ from django.urls import path, re_path, include
 from blog import views
 
 product_patterns = [
-    path('/', views.products),
+    path('', views.products),
     path('new/', views.new),
     path('top/', views.top),
     path('comments/', views.comments),
