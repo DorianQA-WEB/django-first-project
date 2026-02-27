@@ -4,7 +4,8 @@ from django.shortcuts import render
 
 
 def index(request):
-    return render(request, 'index.html')
+    cat = ['python', 'c++', 'java', 'kotlin', 'go', 'js']
+    return render(request, 'blog/index.html', context={'cat': cat})
 
 def about(request, name, age):
     return HttpResponse(f'''<h2>О сайте</h2>
