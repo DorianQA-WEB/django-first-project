@@ -1,15 +1,14 @@
-<!doctype html>
-<html lang="ru">
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8" />
     <title>Django</title>
 </head>
 <body>
-    <p>Категории</p>
-    <ul>
-        {% for i in cat %}
-        <li>{{ i }}</li>
-        {% endfor %}
-        </ul>
+    {{ body }}
+
+    {% autoescape off %}
+        {{ body }}
+    {% endautoescape %}
 </body>
 </html>
