@@ -1,11 +1,10 @@
 from django.http import (HttpResponse, HttpResponseRedirect, HttpResponsePermanentRedirect, HttpResponseBadRequest,
                          HttpResponseForbidden)
 from django.shortcuts import render
-
+from django.template.response import TemplateResponse
 
 def index(request):
-    cat = ['python', 'c++', 'java', 'kotlin', 'go', 'js']
-    return render(request, 'blog/index.html', context={'cat': cat})
+    return render(request, 'blog/index.html', context={'body': '<h1>Hello Word!<h1>'})
 
 def about(request, name, age):
     return HttpResponse(f'''<h2>О сайте</h2>
