@@ -15,7 +15,7 @@ urlpatterns = [
     path('about/', TemplateView.as_view(template_name='blog/about.html', extra_context={'header': 'О сайте'})),
     re_path(r'^contact/', views.contact),
     path('user/', views.user),
-    re_path(r'^user/(?P<name>\D+)/', views.user),
+    re_path(r'^user/ (?P<name>\D+)/', views.user),
     re_path(r'^user/', views.user),
     path('products/<int:id>/', include(product_patterns)),
     path('detail/', views.detail),
