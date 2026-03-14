@@ -6,14 +6,11 @@ from django.template.response import TemplateResponse
 def index(request):
     return render(request, 'blog/index.html', context={'body': '<h1>Hello Word!<h1>'})
 
-def about(request, name, age):
-    return HttpResponse(f'''<h2>О сайте</h2>
-                        <p>Имя: {name}</p>
-                        <p>Возраст: {age}</p>
-                        ''')
+def about(request):
+    return render(request, 'blog/about.html')
 
 def contact(request):
-    return HttpResponseRedirect('/about/')
+    return HttpResponseRedirect('/abouts/')
 
 def detail(request):
     return HttpResponsePermanentRedirect('/')

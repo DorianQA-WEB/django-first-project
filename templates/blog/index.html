@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-{% load static %}
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title>WScrew</title>
-</head>
-<body>
-    <h1>Self WScrew</h1>
-    <img src="{% static 'images/wscrew.jpg' %}" alt="logo" width="1024px"/>
-</body>
-</html>
+{% extends 'base.html' %}
+{% block title %}Index{% endblock title %}
+{% block title_h1 %}<h1>Главная</h1>{% endblock title_h1 %}

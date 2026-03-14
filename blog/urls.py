@@ -12,7 +12,7 @@ product_patterns = [
 
 urlpatterns = [
     path('', views.index, name='home'),
-    path('about/', TemplateView.as_view(template_name='blog/about.html', extra_context={'header': 'О сайте'})),
+    path('about/', views.about),
     re_path(r'^contact/', views.contact),
     path('user/', views.user),
     re_path(r'^user/ (?P<name>\D+)/', views.user),
