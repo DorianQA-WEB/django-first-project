@@ -4,7 +4,7 @@ from django.shortcuts import render
 from django.template.response import TemplateResponse
 
 def index(request):
-    return render(request, 'blog/index.html', context={'body': '<h1>Hello Word!<h1>'})
+    return render(request, 'base.html')
 
 def about(request):
     return render(request, 'blog/about.html')

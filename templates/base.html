@@ -10,8 +10,9 @@
 </nav>
 <h1>{% block title_h1 %}{% endblock title_h1 %}</h1>
 <div>{% block content %}{% endblock content %}</div>
+{% include "blog/banner.html" with tutorial='GoodVibe'%}
 <footer>
-    <div>© 2026</div>
+    <div>GoodVibecorp© 2026</div>
 </footer>
 </body>
 </html>
