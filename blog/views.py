@@ -1,48 +1,10 @@
-from django.http import (HttpResponse, HttpResponseRedirect, HttpResponsePermanentRedirect, HttpResponseBadRequest,
-                         HttpResponseForbidden)
-from django.shortcuts import render
-from django.template.response import TemplateResponse
+from django.shortcuts import render, redirect
+
 
 def index(request):
-    return render(request, 'base.html')
+    return render(request, 'blog/index.html', context={'site': 'mysite.com'})
 
-def about(request):
-    return render(request, 'blog/about.html')
 
 def contact(request):
-    return HttpResponseRedirect('/abouts/')
+    return redirect('blog:about')
 
-def detail(request):
-    return HttpResponsePermanentRedirect('/')
-
-def user(request):
-    age = request.GET.get('age', 0)
-    name = request.GET.get('name', 'vova')
-    return HttpResponse(f'<h2>Пользователь</h2>'
-                        f' <p>Имя: {name}</p>'
-                        f' <p>Возраст: {age}</p>'
-                        )
-
-def products(request, id):
-    return HttpResponse(f'Список товаров {id}')
-
-def comments(request, id):
-    return HttpResponse(f'Комментарии к товару {id}')
-
-def questions(request, id):
-    return HttpResponse(f'Вопросы по товару {id}')
-
-def new(request):
-    return HttpResponse(f'Новый товары')
-
-def top(request):
-    return HttpResponse(f'Наиболее продаваемые товары')
-
-def access(request, age):
-    # если возраст НЕ входит в диапазон 1-110, посылаем ошибку 400
-    if age < 1 or age > 110:
-        return HttpResponseBadRequest('Недопустимый возраст')
-    if age < 18:
-        return HttpResponseForbidden('Доступ запрещен')
-    else:
-        return HttpResponse('Доступ разрешен')
